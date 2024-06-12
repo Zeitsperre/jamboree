@@ -94,7 +94,7 @@ Quelques exemples des services de CI/CD:
 
 ![bg left:55% fit](img/CharlieDayCICD.jpg)
 
-## L'expérience de décrire les pipelines de CI
+## L'expérience de décrire les pipelines de CI/CD
 
 Exemple simplifiée : `xclim`
 
@@ -123,18 +123,19 @@ Exemple simplifiée : `xclim`
 ## <!-- fit --> « **Continuous Deployment** »
 
 * Le mainteneur pousse un *tagged commit* qui décrit une version (par exemple `v1.2.3`).
-* Un paquet est créé avec ce commit et placé sur le « *Python Package Testing Index* »
-* Vérification du fonctionnement du paquet sur **testpypi.org**.
-* Une « *release* » de la prochaine version est mise en place par le flux de travail.
-* Le mainteneur donne le « *go* » pour finaliser la version.
-* Le paquet est placé sur le véritable « *Python Package Index* ».
+* Un paquet est créé et est mise en place sur le « *Python Package Testing Index* »
+  - L'étape de **staging**
+* Après vérification, le mainteneur donne le « *go* » pour finaliser la version.
+  - L'étape de **vérification**
+* Le paquet final est placé sur le véritable « *Python Package Index* ».
+  - L'étape de **deploiement**
 
 ---
 
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-<!-- Quand on met ça toute ensemble, on trouve la graphique ici -->
+<!-- Quand on met ça toute ensemble, on trouve la graphique ici.-->
 
 ![bg fit](img/CICD.drawio.png)
 
@@ -145,13 +146,16 @@ Exemple simplifiée : `xclim`
     position: absolute;
     top: 5%;
   }
-  p {
+  h4 {
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
   }
 </style>
 
 ![bg 65%](img/a-world-without-ci.cd-meme.webp)
 
+<!-- _footer: "**Présentation : https://zeitsperre.github.io/jamboree/ Code Source : https://github.com/Zeitsperre/jamboree** " -->
+
 # Merci !
 
+#### **Cette présentation a été mise en ligne grâce au déploiement continu**
