@@ -41,7 +41,7 @@ style: |
 <!-- _header: "" -->
 <!-- _paginate: skip -->
 
-![bg right fit](img/works-for-me.jpg)
+![bg right 90%](img/works-for-me.jpg)
 
 # Développement / Déploiment continue à Ouranos en ~5 minutes
 
@@ -51,7 +51,10 @@ style: |
 
 ---
 
-## C'est quoi Développement continue ?
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+## C'est quoi **Développement continue** ?
 
 *ou « **Continuous Integration** »*
 
@@ -60,7 +63,7 @@ style: |
 - Fournir un retour d'information aux développeurs sur ce qu'ils doivent modifier
 - Veiller à ce que la base de code fonctionne en permanence
 
-## C'est quoi Déploiement continue ?
+## C'est quoi **Déploiement continue** ?
 
 *ou « **Continuous Deployment** »*
 
@@ -100,9 +103,9 @@ Exemple simplifiée : `xclim`
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-![bg right:55% fit](img/CI.drawio.png)
+![bg right:45% fit](img/CI.drawio.png)
 
-## « **Continuous Integration** »
+## <!-- fit --> « **Continuous Integration** »
 
 * Le développeur envoie le code sur « *GitHub* ».
 * Contrôles de qualité du code écrit
@@ -115,9 +118,9 @@ Exemple simplifiée : `xclim`
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-![bg left:45% fit](img/CD.drawio.png)
+![bg left:40% fit](img/CD.drawio.png)
 
-## « **Continuous Deployment** »
+## <!-- fit --> « **Continuous Deployment** »
 
 * Le mainteneur pousse un *tagged commit* qui décrit une version (par exemple `v1.2.3`).
 * Un paquet est créé avec ce commit et placé sur le « *Python Package Testing Index* »
