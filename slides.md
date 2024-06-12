@@ -103,7 +103,7 @@ Exemple simplifiée : `xclim`
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-![bg right:45% fit](img/CI.drawio.png)
+![bg right fit](img/CI.drawio.png)
 
 ## <!-- fit --> « **Continuous Integration** »
 
@@ -144,6 +144,10 @@ Exemple simplifiée : `xclim`
   h1 {
     position: absolute;
     top: 5%;
+  }
+  p {
+    position: absolute;
+    bottom: 10%;
   }
 </style>
 
