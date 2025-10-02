@@ -32,7 +32,8 @@ jobs:
 
       - name: Install image compression libraries
         run: |
-          sudo apt-get -y install imagemagick ghostscript
+          sudo apt-get -y install imagemagick
+          # sudo apt-get -y install ghostscript
           # python -m pip install compress-pptx
 
       - name: Ensure build dir exists
@@ -48,14 +49,14 @@ jobs:
           cp -R img build/img
 
       - name: Marp Build (slides.md)
-        uses: docker://marpteam/marp-cli:v3.4.0
+        uses: docker://marpteam/marp-cli:v4.2.3
         with:
           args: slides.md -o build/index.html
         env:
           MARP_USER: root:root
 
       - name: Marp Build (slides.pdf)
-        uses: docker://marpteam/marp-cli:v3.4.0
+        uses: docker://marpteam/marp-cli:v4.2.3
         with:
           args: slides.md --allow-local-files -o build/slides.pdf
         env:
