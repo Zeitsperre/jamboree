@@ -23,10 +23,10 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Setup Python3
-        uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.x"
 
@@ -35,7 +35,7 @@ jobs:
           sudo apt-get -y update && sudo apt-get -y install ghostscript
 
       - name: Install ImageMagick
-        uses: mfinelli/setup-imagemagick@e5a049b136cb833d5c0474b38d166f0bdb0e4497 #v7.0.1
+        uses: mfinelli/setup-imagemagick@7bcb45380be40873a59cc0d4a457ec9228b6c84c # v8.0.0
         with:
           cache: true
 
@@ -52,14 +52,14 @@ jobs:
           cp -R img build/img
 
       - name: Marp Build (slides.md)
-        uses: docker://marpteam/marp-cli:v4.2.3
+        uses: docker://marpteam/marp-cli:v4.5.0
         with:
           args: slides.md -o build/index.html
         env:
           MARP_USER: root:root
 
       - name: Marp Build (slides.pdf)
-        uses: docker://marpteam/marp-cli:v4.2.3
+        uses: docker://marpteam/marp-cli:v4.5.0
         with:
           args: slides.md --allow-local-files -o build/slides.pdf
         env:
@@ -78,7 +78,7 @@ jobs:
           rm build/slides.pdf
 
       # - name: Marp Build (slides.pptx)
-      #   uses: docker://marpteam/marp-cli:v3.4.0
+      #   uses: docker://marpteam/marp-cli:v4.5.0
       #   with:
       #     args: slides.md --allow-local-files -o build/slides.pptx
       #   env:
@@ -90,7 +90,7 @@ jobs:
 
       - name: Deploy preview
         if: ${{ github.event_name == 'pull_request' }}
-        uses: rossjrw/pr-preview-action@5fd5f8e2f88e735fc3d1151302b32242037e3962 # v1.8.0
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
         with:
           source-dir: ./build/
           preview-branch: gh-pages
@@ -98,7 +98,7 @@ jobs:
 
       - name: Deploy production
         if: ${{ github.event_name == 'push' }}
-        uses: JamesIves/github-pages-deploy-action@9d877eea73427180ae43cf98e8914934fe157a1a # v4.7.6
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
           branch: gh-pages
           folder: ./build/
